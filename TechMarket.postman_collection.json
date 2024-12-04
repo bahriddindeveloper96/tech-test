@@ -1,0 +1,649 @@
+{
+	"info": {
+		"_postman_id": "your-postman-id",
+		"name": "TechMarket API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"John\",\n    \"last_name\": \"Doe\",\n    \"email\": \"user@example.com\",\n    \"password\": \"password\",\n    \"password_confirmation\": \"password\",\n    \"phone\": \"+998901234567\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/auth/register",
+							"host": ["{{base_url}}"],
+							"path": ["api", "auth", "register"]
+						}
+					}
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"user@example.com\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/auth/login",
+							"host": ["{{base_url}}"],
+							"path": ["api", "auth", "login"]
+						}
+					}
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/logout",
+							"host": ["{{base_url}}"],
+							"path": ["api", "logout"]
+						}
+					}
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/user",
+							"host": ["{{base_url}}"],
+							"path": ["api", "user"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "List Categories",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/categories",
+							"host": ["{{base_url}}"],
+							"path": ["api", "categories"]
+						}
+					}
+				},
+				{
+					"name": "Get Category",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/categories/1",
+							"host": ["{{base_url}}"],
+							"path": ["api", "categories", "1"]
+						}
+					}
+				},
+				{
+					"name": "Get Category Products",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/categories/1/products",
+							"host": ["{{base_url}}"],
+							"path": ["api", "categories", "1", "products"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "List Products",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/products",
+							"host": ["{{base_url}}"],
+							"path": ["api", "products"]
+						}
+					}
+				},
+				{
+					"name": "Get Product",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/products/1",
+							"host": ["{{base_url}}"],
+							"path": ["api", "products", "1"]
+						}
+					}
+				},
+				{
+					"name": "Featured Products",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/featured-products",
+							"host": ["{{base_url}}"],
+							"path": ["api", "featured-products"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Seller",
+			"item": [
+				{
+					"name": "List Products",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/seller/products",
+							"host": ["{{base_url}}"],
+							"path": ["api", "seller", "products"]
+						}
+					}
+				},
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"category_id\": 1,\n    \"price\": 100000,\n    \"stock\": 10,\n    \"status\": \"active\",\n    \"translations\": {\n        \"uz\": {\n            \"name\": \"Mahsulot nomi\",\n            \"description\": \"Mahsulot haqida\"\n        },\n        \"ru\": {\n            \"name\": \"Название продукта\",\n            \"description\": \"О продукте\"\n        },\n        \"en\": {\n            \"name\": \"Product name\",\n            \"description\": \"About product\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/seller/products",
+							"host": ["{{base_url}}"],
+							"path": ["api", "seller", "products"]
+						}
+					}
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"category_id\": 1,\n    \"price\": 150000,\n    \"stock\": 15,\n    \"status\": \"active\",\n    \"translations\": {\n        \"uz\": {\n            \"name\": \"Yangilangan nom\",\n            \"description\": \"Yangilangan tavsif\"\n        },\n        \"ru\": {\n            \"name\": \"Обновленное название\",\n            \"description\": \"Обновленное описание\"\n        },\n        \"en\": {\n            \"name\": \"Updated name\",\n            \"description\": \"Updated description\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/seller/products/1",
+							"host": ["{{base_url}}"],
+							"path": ["api", "seller", "products", "1"]
+						}
+					}
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/seller/products/1",
+							"host": ["{{base_url}}"],
+							"path": ["api", "seller", "products", "1"]
+						}
+					}
+				},
+				{
+					"name": "Get Categories",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/seller/categories",
+							"host": ["{{base_url}}"],
+							"path": ["api", "seller", "categories"]
+						}
+					}
+				},
+				{
+					"name": "Get Statistics",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/seller/statistics",
+							"host": ["{{base_url}}"],
+							"path": ["api", "seller", "statistics"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "List Orders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/orders",
+							"host": ["{{base_url}}"],
+							"path": ["api", "orders"]
+						}
+					}
+				},
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"delivery_method_id\": 1,\n    \"payment_method_id\": 1,\n    \"items\": [\n        {\n            \"product_id\": 1,\n            \"quantity\": 2\n        }\n    ],\n    \"shipping_address\": \"123 Main St, City\",\n    \"shipping_phone\": \"+998901234567\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/orders",
+							"host": ["{{base_url}}"],
+							"path": ["api", "orders"]
+						}
+					}
+				},
+				{
+					"name": "Get Order",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/orders/1",
+							"host": ["{{base_url}}"],
+							"path": ["api", "orders", "1"]
+						}
+					}
+				},
+				{
+					"name": "Cancel Order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/orders/1/cancel",
+							"host": ["{{base_url}}"],
+							"path": ["api", "orders", "1", "cancel"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Favorites",
+			"item": [
+				{
+					"name": "List Favorites",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/favorites",
+							"host": ["{{base_url}}"],
+							"path": ["api", "favorites"]
+						}
+					}
+				},
+				{
+					"name": "Add to Favorites",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/favorites/1",
+							"host": ["{{base_url}}"],
+							"path": ["api", "favorites", "1"]
+						}
+					}
+				},
+				{
+					"name": "Remove from Favorites",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/favorites/1",
+							"host": ["{{base_url}}"],
+							"path": ["api", "favorites", "1"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Compare List",
+			"item": [
+				{
+					"name": "List Compare",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/compare",
+							"host": ["{{base_url}}"],
+							"path": ["api", "compare"]
+						}
+					}
+				},
+				{
+					"name": "Add to Compare",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/compare",
+							"host": ["{{base_url}}"],
+							"path": ["api", "compare"]
+						}
+					}
+				},
+				{
+					"name": "Remove from Compare",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/compare/1",
+							"host": ["{{base_url}}"],
+							"path": ["api", "compare", "1"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Reviews",
+			"item": [
+				{
+					"name": "List Reviews",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/products/1/reviews",
+							"host": ["{{base_url}}"],
+							"path": ["api", "products", "1", "reviews"]
+						}
+					}
+				},
+				{
+					"name": "Create Review",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"rating\": 5,\n    \"translations\": {\n        \"uz\": {\n            \"comment\": \"Ajoyib mahsulot\"\n        },\n        \"ru\": {\n            \"comment\": \"Отличный продукт\"\n        },\n        \"en\": {\n            \"comment\": \"Great product\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/products/1/reviews",
+							"host": ["{{base_url}}"],
+							"path": ["api", "products", "1", "reviews"]
+						}
+					}
+				},
+				{
+					"name": "Update Review",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"rating\": 4,\n    \"translations\": {\n        \"uz\": {\n            \"comment\": \"Yaxshi mahsulot\"\n        },\n        \"ru\": {\n            \"comment\": \"Хороший продукт\"\n        },\n        \"en\": {\n            \"comment\": \"Good product\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/products/1/reviews/1",
+							"host": ["{{base_url}}"],
+							"path": ["api", "products", "1", "reviews", "1"]
+						}
+					}
+				},
+				{
+					"name": "Delete Review",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/products/1/reviews/1",
+							"host": ["{{base_url}}"],
+							"path": ["api", "products", "1", "reviews", "1"]
+						}
+					}
+				}
+			]
+		}
+	]
+}

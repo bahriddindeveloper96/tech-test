@@ -1,0 +1,36 @@
+{
+    "messages": {
+        "attributes": {
+            "retrieved": "Attributes retrieved successfully",
+            "error_retrieving": "Error retrieving attributes"
+        },
+        "product_attributes": {
+            "retrieved": "Product attributes retrieved successfully",
+            "error_retrieving": "Error retrieving product attributes",
+            "updated": "Product attributes updated successfully",
+            "error_updating": "Error updating product attributes"
+        },
+        "attribute_combinations": {
+            "generated": "Attribute combinations generated successfully",
+            "error_generating": "Error generating attribute combinations"
+        },
+        "stock": {
+            "retrieved": "Stock information retrieved successfully",
+            "error_retrieving": "Error retrieving stock information",
+            "updated": "Stock updated successfully",
+            "error_updating": "Error updating stock"
+        },
+        "stock_history": {
+            "retrieved": "Stock history retrieved successfully",
+            "error_retrieving": "Error retrieving stock history"
+        },
+        "low_stock": {
+            "retrieved": "Low stock alerts retrieved successfully",
+            "error_retrieving": "Error retrieving low stock alerts"
+        },
+        "stock_statistics": {
+            "retrieved": "Stock statistics retrieved successfully",
+            "error_retrieving": "Error retrieving stock statistics"
+        }
+    }
+}

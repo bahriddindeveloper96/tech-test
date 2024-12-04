@@ -1,0 +1,36 @@
+{
+    "messages": {
+        "attributes": {
+            "retrieved": "Atributlar muvaffaqiyatli olindi",
+            "error_retrieving": "Atributlarni olishda xatolik yuz berdi"
+        },
+        "product_attributes": {
+            "retrieved": "Mahsulot atributlari muvaffaqiyatli olindi",
+            "error_retrieving": "Mahsulot atributlarini olishda xatolik yuz berdi",
+            "updated": "Mahsulot atributlari muvaffaqiyatli yangilandi",
+            "error_updating": "Mahsulot atributlarini yangilashda xatolik yuz berdi"
+        },
+        "attribute_combinations": {
+            "generated": "Atribut kombinatsiyalari muvaffaqiyatli yaratildi",
+            "error_generating": "Atribut kombinatsiyalarini yaratishda xatolik yuz berdi"
+        },
+        "stock": {
+            "retrieved": "Stok ma'lumotlari muvaffaqiyatli olindi",
+            "error_retrieving": "Stok ma'lumotlarini olishda xatolik yuz berdi",
+            "updated": "Stok muvaffaqiyatli yangilandi",
+            "error_updating": "Stokni yangilashda xatolik yuz berdi"
+        },
+        "stock_history": {
+            "retrieved": "Stok tarixi muvaffaqiyatli olindi",
+            "error_retrieving": "Stok tarixini olishda xatolik yuz berdi"
+        },
+        "low_stock": {
+            "retrieved": "Kam qolgan stoklar muvaffaqiyatli olindi",
+            "error_retrieving": "Kam qolgan stoklarni olishda xatolik yuz berdi"
+        },
+        "stock_statistics": {
+            "retrieved": "Stok statistikasi muvaffaqiyatli olindi",
+            "error_retrieving": "Stok statistikasini olishda xatolik yuz berdi"
+        }
+    }
+}
